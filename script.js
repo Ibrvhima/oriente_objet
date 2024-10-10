@@ -21,6 +21,14 @@ console.log(Person.prototype);
 Amad.calcAge()
 Oumar.calcAge()
 
+console.log(Amad.__proto__ === Person.prototype);
+console.log(Amad.__proto__ === Person.__proto__);
+
+console.log(Person.__proto__ === Person.prototype);
+console.log(Person.prototype.isPrototypeOf(Amad));
+
+
+
 //exécution de la fonction constructive on use l'operateur "new"
 
 new Person("Diallo", 2000);
