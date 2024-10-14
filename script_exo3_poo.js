@@ -25,3 +25,4 @@ const dog = new Chien("Max", "Berger", 'Fraçais')
 
 animal.parler()
 dog.aboyer()
+
