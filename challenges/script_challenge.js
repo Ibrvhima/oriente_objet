@@ -9,7 +9,7 @@ class Books {
     this.pubYear = pubYear;
     this.status = "available";
   }
-  //loan a book
+  //////////////////////////////////loan a book
   loan() {
     if (this.status === "available") {
       this.status = "loaned";
@@ -17,14 +17,12 @@ class Books {
     } else {
       console.log(`The book ${this.title} was loaned `);
     }
-
     return this;
   }
 
-  //return book
+  /////////////////////////////////////////return book
   return() {
     if (this.status === "Loaned") {
-      this.status = "available";
       this.status = "available";
       console.log(`The book ${this.title} was returned.`);
     } else {
@@ -115,7 +113,7 @@ class Library {
   addBooks(book) {
     this.books.push(book);
     console.log(
-      `le livre ${this.title} de ${this.author} a été ajouter à la bibliotheque`
+      `le livre ${book.title} de ${book.author} a été ajouter à la bibliotheque`
     );
 
     return this;
@@ -144,8 +142,33 @@ class Library {
   }
 }
 
-////////////////////////////// HERE I CREAT BOOKS
+//////////////////////// HERE I CREATE USERS
+const user1 = new Users("Mamadou Bah");
+const user2 = new Users("Ibrahima Diallo");
+const user3 = new Users("Aminata Barry");
 
- const book1 = new Books("Enfant Noir", "Camara Laye", 2002);
- console.log(book1);
+console.log(user1);
+
+////////////////////////////// HERE I CREATE BOOKS
+
+const book1 = new Books("Enfant Noir", "Camara Laye", 2002);
+const book2 = new Books("Le petit prince", "Antoine de saint", 1943);
+const book3 = new Books("Etranger", "Alber Camus", 1942);
+
+console.log(book1);
+
+/////////////////// HERE I CREATE A LIBRARY
+const library = new Library();
+library.addBooks(book1).addBooks(book2).addBooks(book3);
+console.log(library);
+
+user1.loanBook(book1)
+user2.loanBook(book2)
+user1.ajoutFonds(100000)
+user1.payerFrais(20000)
+user1.displaySold()
+console.log(user1);
+
+
+
 
